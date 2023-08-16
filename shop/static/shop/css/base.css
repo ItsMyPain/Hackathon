@@ -1,0 +1,164 @@
+@import url(https://fonts.googleapis.com/css2?family=Montserrat&display=swap);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+::-webkit-scrollbar, html ::-webkit-scrollbar {
+    height: 3px;
+    width: 12px
+}
+
+::-webkit-scrollbar-track, html ::-webkit-scrollbar-track {
+    border-radius: 30px;
+    background: var(--body-bg)
+}
+
+::-webkit-scrollbar-thumb, html ::-webkit-scrollbar-thumb {
+    background-color: var(--header-bg);
+    border-radius: 30px;
+    border: 3px solid var(--body-bg)
+}
+
+body, html {
+    display: grid;
+    height: 100%;
+    width: 100%;
+    background: var(--body-bg);
+    font-family: "Montserrat", arial, sans-serif;
+}
+
+.container {
+    width: 100%;
+    padding: 0 152px;
+}
+
+@media (max-width: 1598px) {
+    .container {
+        padding: 0 112px;
+    }
+}
+
+@media (max-width: 1438px) {
+    .container {
+        padding: 0 40px;
+    }
+}
+
+@media (max-width: 1023px) {
+    .container {
+        padding: 0 32px;
+    }
+}
+
+@media (max-width: 767px) {
+    .container {
+        padding: 0 24px;
+    }
+}
+
+@media (max-width: 567px) {
+    .container {
+        padding: 0 16px;
+    }
+}
+
+.header {
+    width: 100%;
+    background: var(--header-bg);
+}
+
+.footer .footer-content, .header .header-content {
+    padding-top: 16px;
+    padding-bottom: 16px;
+    /* padding: 15px 5%;
+    width: 100%; */
+    display: flex;
+    flex-direction: column
+}
+
+.footer .footer-content .footer-info span, .footer .footer-content .footer-navigation span, .header .header-content .header-top {
+    height: 20px;
+    margin: 5px
+}
+
+.header .header-content .header-top .header-phone {
+    color: var(--header-text);
+    text-decoration: none
+}
+
+.header .header-content .header-bottom {
+    /* height: 50px; */
+    margin: 5px;
+    display: flex;
+    flex-direction: row
+}
+
+@media (max-width: 767px) {
+    .header .header-content .header-bottom {
+        flex-direction: column;
+    }
+}
+
+.header .header-content .header-bottom .header-logo {
+    width: 190px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.layout {
+    min-height: calc(100vh - 270px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 24px;
+}
+
+.footer {
+    /* height: 150px; */
+    width: 100%;
+    background: var(--footer-bg);
+}
+
+.footer .footer-content {
+    flex-direction: row;
+    justify-content: space-between
+}
+
+.footer .footer-content .footer-info, .footer .footer-content .footer-navigation {
+    color: var(--footer-text);
+    display: flex;
+    flex-direction: column
+}
+
+.footer .footer-content .footer-info .footer-logo {
+    width: 186px;
+    height: 50px;
+    margin: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer .footer-content .footer-navigation {
+    font-weight: 700
+}
+
+.footer .footer-content .footer-info-social {
+    color: var(--footer-text);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    fill: var(--footer-text)
+}
+
+.footer .footer-content .footer-info-social .footer-link {
+    height: 50px;
+    margin: 5px;
+    fill: var(--footer-text)
+}
