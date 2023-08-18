@@ -11,18 +11,17 @@
         <div class="form-container">
             <form method="post">
                 {% csrf_token %}
-
-                <label for="email">Эл. почта</label>
-                <div class="field">
-                    {{ user.email }}
-                </div>
-                <label for="password">Пароль</label>
-                <div class="field">
-                    {{ user.password }}
-                </div>
+                {% for fil in form %}
+                    <label for="{{ fil.id_for_label }}">{{ fil.label }}</label>
+                    <div class="field">
+                        {{ fil }}
+                        <span class="field-error">{{ fil.errors }}</span>
+                    </div>
+                {% endfor %}
                 <div class="button-login">
                     <input id="submit" name="submit" type="submit" value="Войти">
                 </div>
+                <span class="field-error">{{ form.non_field_errors }}</span>
                 <div class="link">Не зарегистрированы?
                     <a href="/registration">Зарегистрироваться</a>
                 </div>

@@ -99,7 +99,7 @@ form .button-registration input[type="submit"]:hover {
     transition: all 0.2s ease;
 }
 
-.form-container form .field span {
+.form-container span {
     color: red;
     font-size: 13px;
     display: block;

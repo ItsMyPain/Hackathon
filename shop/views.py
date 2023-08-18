@@ -1,38 +1,28 @@
+from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth.views import LoginView
 from django.http import HttpResponse
-from django.shortcuts import redirect
 from django.template import loader
+from django.urls import reverse_lazy
+from django.views.generic import CreateView
 
 from .forms import RegistrationForm
 
 
 def main_page(request):
-    template = loader.get_template("shop/base.html")
+    template = loader.get_template("shop/main_page.html")
     context = {}
     return HttpResponse(template.render(context, request))
 
 
-def login(request):
-    print(request.GET)
-    print(request.POST)
-    if request.method == 'POST':
-        user = LoginFrom(request.POST)
-    else:
-        user = LoginFrom()
-    print(user)
-    template = loader.get_template("shop/login.html")
-    context = {'user': user}
-    return HttpResponse(template.render(context, request))
+class LoginUser(LoginView):
+    form_class = AuthenticationForm
+    template_name = 'shop/login.html'
+
+    def get_success_url(self):
+        return reverse_lazy('main_page')
 
 
-def registration(request):
-    if request.method == 'POST':
-        reg_form = RegistrationForm(request.POST)
-        if reg_form.is_valid():
-            reg_form.save()
-            return redirect('main_page')
-    else:
-        reg_form = RegistrationForm()
-
-    template = loader.get_template("shop/registration.html")
-    context = {'form': reg_form}
-    return HttpResponse(template.render(context, request))
+class RegisterUser(CreateView):
+    form_class = RegistrationForm
+    template_name = 'shop/registration.html'
+    success_url = reverse_lazy('main_page')
