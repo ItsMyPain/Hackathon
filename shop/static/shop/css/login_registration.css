@@ -20,6 +20,10 @@
     margin: 0 0 10px 0;
 }
 
+.form-container {
+    width: 80%;
+}
+
 form .field {
     height: 50px;
     margin: 10px 0 20px 0;
