@@ -3,7 +3,6 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 ::-webkit-scrollbar, html ::-webkit-scrollbar {
@@ -113,10 +112,10 @@ body, html {
 .layout {
     min-height: calc(100vh - 270px);
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     padding-bottom: 24px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
 }
 
 .footer {

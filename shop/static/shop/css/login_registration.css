@@ -1,12 +1,15 @@
 .wrapper {
     min-width: 300px;
     max-width: 500px;
-    width: 50%;
+    width: 45%;
     background: var(--background);
     padding: 30px;
     margin: 30px;
     border-radius: 10px;
     box-shadow: 1px 15px 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .wrapper .title {
@@ -14,18 +17,20 @@
     font-weight: 550;
     text-align: center;
     color: var(--text-header);
+    margin: 0 0 10px 0;
 }
 
 form .field {
     height: 50px;
-    margin: 10px 0 20px 0
+    margin: 10px 0 20px 0;
+    width: 90%;
 }
 
 form .field input {
     height: 100%;
     width: 100%;
     outline: none;
-    padding-left: 15px;
+    padding: 0 15px;
     font-size: 17px;
     border-radius: 10px;
     border: 1px solid var(--second);
@@ -97,5 +102,6 @@ form .button-registration input[type="submit"]:hover {
 .form-container form .field span {
     color: red;
     font-size: 13px;
-    margin-left: 5px;
+    display: block;
+    margin: 0 0 0 30px;
 }

@@ -7,17 +7,17 @@
 
 {% block content %}
     <div class="wrapper">
-        <div class="title">Вход</div>
+        <div class="title">Регистрация</div>
         <div class="form-container">
             <form method="post">
-                <div class="field">
-                    <label for="login">Логин</label>
-                    <input id="login" name="login" placeholder="Почта или телефон" type="text" value="">
-                </div>
-                <div class="field">
-                    <label for="password">Пароль</label>
-                    <input id="password" name="password" placeholder="Пароль" type="password" value="">
-                </div>
+                {% csrf_token %}
+                {% for fil in form %}
+                    <label for="{{ fil.id_for_label }}">{{ fil.label }}</label>
+                    <div class="field">
+                        {{ fil }}
+                        <span class="field-error">{{ fil.errors }}</span>
+                    </div>
+                {% endfor %}
                 <div class="button-login">
                     <input id="submit" name="submit" type="submit" value="Войти">
                 </div>
